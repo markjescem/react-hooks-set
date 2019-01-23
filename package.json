@@ -1,0 +1,36 @@
+{
+  "name": "react-hooks-use",
+  "version": "1.0.0",
+  "description": "awsome react hooks use",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcuking/react-hooks-use.git"
+  },
+  "keywords": [
+    "data",
+    "persistence",
+    "react",
+    "hooks"
+  ],
+  "author": "mcuking",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcuking/react-hooks-use/issues"
+  },
+  "homepage": "https://github.com/mcuking/react-hooks-use#readme",
+  "dependencies": {
+    "@types/react": "^16.7.20",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  }
+}
