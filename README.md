@@ -12,5 +12,5 @@
 
 <br/>
 
-- [`usePagePostion`](./docs/usePagePosition.md) &mdash; memorizes page vertical scrolling location state.
+- [`usePagePosition`](./docs/usePagePosition.md) &mdash; memorizes page vertical scrolling location state.
 - [`usePersist`](./docs/usePersist.md) &mdash; tracks and recovers page state automatically.
