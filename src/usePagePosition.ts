@@ -1,19 +1,19 @@
-import { useEffect } from 'react'
-import createStorage from './utils/createStorage'
+import { useEffect } from 'react';
+import createStorage from './utils/createStorage';
 
-function usePagePosition() {
-  const storage = createStorage('local')
+function usePagePosition(elementId: string) {
+  const storage = createStorage('local');
 
   useEffect(() => {
-    let pagePositions = storage.getItem('pagePositions')
-    const scrollPage = document.getElementById('scrollPage')
-    const pathname = window.location.pathname
+    let pagePositions = storage.getItem('react-hooks-use-page-positions');
+    const scrollPage = elementId ? document.getElementById(elementId) : null;
+    const pathname = window.location.pathname;
 
     if (pagePositions[pathname]) {
       if (scrollPage) {
-        scrollPage.scrollTop = pagePositions[pathname]
+        scrollPage.scrollTop = pagePositions[pathname];
       } else {
-        window.scrollTo(0, pagePositions[pathname])
+        window.scrollTo(0, pagePositions[pathname]);
       }
     }
     return () => {
@@ -22,10 +22,10 @@ function usePagePosition() {
         ...{
           [pathname]: scrollPage ? scrollPage.scrollTop : window.scrollY
         }
-      }
-      storage.setItem('pagePositions', pagePositions)
-    }
-  }, [])
+      };
+      storage.setItem('react-hooks-use-page-positions', pagePositions);
+    };
+  }, []);
 }
 
-export default usePagePosition
+export default usePagePosition;

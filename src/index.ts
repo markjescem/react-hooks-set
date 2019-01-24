@@ -1,4 +1,4 @@
-import usePersist from './usePersist'
-import usePagePostion from './usePagePosition'
+import usePersist from './usePersist';
+import usePagePosition from './usePagePosition';
 
-export { usePersist, usePagePostion }
+export { usePersist, usePagePosition };
