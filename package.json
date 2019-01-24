@@ -1,13 +1,17 @@
 {
   "name": "react-hooks-use",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "awsome react hooks use",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "README.md"
+  ],
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf lib && tsc",
+    "deploy": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -26,11 +30,14 @@
   },
   "homepage": "https://github.com/mcuking/react-hooks-use#readme",
   "dependencies": {
-    "@types/react": "^16.7.20",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "@types/react": "^16.7.20"
   },
   "devDependencies": {
+    "rimraf": "^2.6.3",
     "typescript": "^3.2.4"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
   }
 }
