@@ -41,3 +41,19 @@ const Demo = () => {
   )
 }
 ```
+
+## Reference
+
+```js
+usePagePostion(scollableElementId);
+usePagePostion(scollableElementId, positionDataKey);
+usePagePostion(
+  scollableElementId,
+  positionDataKey,
+  storePositionEvenWindowClosed
+);
+```
+
+- `scollableElementId` &mdash; If scrollable content is not window, you could set id to the srcollable content and pass id to hook, or the scrollable content is window by default.
+- `positionDataKey` &mdash; `localStorage` or `sessionStorage` key to manage position data.
+- `storePositionEvenWindowClosed` &mdash; boolean, if set to `false`, hook will use sessionSorage to store position data, and data will be cleared when page closed.
