@@ -3,7 +3,7 @@ import createStorage from './utils/createStorage';
 
 function usePagePosition(
   scollableElementId: string,
-  positionDataKey = 'react-hooks-use-page-positions',
+  positionDataKey = 'react-hooks-collection-page-positions',
   storePositionEvenWindowClosed = false
 ) {
   const storage = storePositionEvenWindowClosed

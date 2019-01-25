@@ -7,7 +7,7 @@ The hooks could memorize vertical scrolling position of page which is closed. Wh
 If the scrollable section is window, just use the hooks.
 
 ```jsx
-import { usePagePostion } from 'react-hooks-use'
+import { usePagePostion } from 'react-hooks-collection'
 
 const Demo = () => {
   usePagePostion()
@@ -26,7 +26,7 @@ const Demo = () => {
 In some cases, the scrollable section is just a container of dom. So you need set the id of the container, and pass the name of id to the hooks.
 
 ```jsx
-import { usePagePostion } from 'react-hooks-use'
+import { usePagePostion } from 'react-hooks-collection'
 
 const Demo = () => {
   usePagePostion('scrollPage')

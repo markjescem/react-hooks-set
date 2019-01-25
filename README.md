@@ -2,7 +2,7 @@
   <h1>
     <br/>
     <br/>
-    react-hooks-use
+    react-hooks-collection
     <br/>
     <br/>
   </h1>

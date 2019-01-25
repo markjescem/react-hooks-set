@@ -1,6 +1,6 @@
 {
-  "name": "react-hooks-use",
-  "version": "1.0.7",
+  "name": "react-hooks-collection",
+  "version": "1.0.8",
   "description": "awsome react hooks use",
   "main": "lib/index.js",
   "files": [
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mcuking/react-hooks-use.git"
+    "url": "git+https://github.com/mcuking/react-hooks-collection.git"
   },
   "keywords": [
     "data",
@@ -26,9 +26,9 @@
   "author": "mcuking",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mcuking/react-hooks-use/issues"
+    "url": "https://github.com/mcuking/react-hooks-collection/issues"
   },
-  "homepage": "https://github.com/mcuking/react-hooks-use#readme",
+  "homepage": "https://github.com/mcuking/react-hooks-collection#readme",
   "dependencies": {
     "@types/react": "^16.7.20"
   },
