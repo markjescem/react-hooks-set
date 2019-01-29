@@ -17,6 +17,7 @@
 
 - [`useScrollPosition`](./docs/useScrollPosition.md) &mdash; memorizes page vertical scrolling location state.
 - [`usePersist`](./docs/usePersist.md) &mdash; tracks and recovers page state automatically.
-- [`useElementSize`](./docs/useElementLeft.md) &mdash; fetch the size of some element.
-- [`useElementLeft`](./docs/useElementLeft.md) &mdash; fetch the distance of some element to the left of window.
-- [`useElementTop`](./docs/useElementTop.md) &mdash; fetch the distance of some element to the top of window.
+- [`useDebounce`](./docs/useDebounce.md) &mdash; debounces any fast changing value.
+- [`useElementSize`](./docs/useElementLeft.md) &mdash; fetches the size of some element.
+- [`useElementLeft`](./docs/useElementLeft.md) &mdash; fetches the distance of some element to the left of window.
+- [`useElementTop`](./docs/useElementTop.md) &mdash; fetches the distance of some element to the top of window.

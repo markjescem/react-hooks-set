@@ -5,6 +5,8 @@ The hooks could track the state of page. When then page is reopened, the memoriz
 ## Usage
 
 ```jsx
+import { usePersist } from 'react-hooks-collection';
+
 const Demo = props => {
   const { history } = props;
   const [remark, setRemark, clearRemark] = usePersist('remark', false);
