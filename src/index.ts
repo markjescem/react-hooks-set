@@ -4,7 +4,7 @@ import useElementSize from './useElementSize';
 import useElementLeft from './useElementLeft';
 import useElementTop from './useElementTop';
 import useDebounce from './useDebounce';
-import useClickOutside from './useClickOutside';
+import useOnClickOutside from './useOnClickOutside';
 
 export {
   usePersist,
@@ -13,5 +13,5 @@ export {
   useElementLeft,
   useElementTop,
   useDebounce,
-  useClickOutside
+  useOnClickOutside
 };

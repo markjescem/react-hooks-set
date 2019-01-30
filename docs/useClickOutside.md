@@ -1,22 +1,34 @@
-# `useClickOutside`
+# `useOnClickOutside`
 
-The hooks could help you listen click event on the outside of a specific area. The passed callback function would be executed when the outside area is clicked.
+The hooks could help you detect clicks outside of a specified element. The passed callback function would be executed when the outside area is clicked.
 
 ## Usage
 
 ```jsx
 import { useState, useRef } from 'react';
-import { useClickOutside } from 'react-hooks-collection';
+import { useOnClickOutside } from 'react-hooks-collection';
 
 const Demo = () => {
-  const [value, setValue] = useState('');
-  const formRef = useRef(null);
-  useClickOutside(formRef, () => setValue('form outside is clicked'));
+  const [isModalShow, setModalShow] = useState(false);
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setModalShow(false));
 
   return (
-    <form ref={formRef}>
-      <input value={value} onChange={e => setValue(e.target.value)} />
-    </form>
+    <>
+      {isModalShow ? (
+        <div ref={ref}>
+          This is modal content. Click anywhere outside of me to close.
+        </div>
+      ) : (
+        <button
+          onClick={() => {
+            setModalShow(true);
+          }}
+        >
+          Open Modal
+        </button>
+      )}
+    </>
   );
 };
 ```
@@ -24,8 +36,8 @@ const Demo = () => {
 ## Reference
 
 ```js
-useClickOutside(ref, onClickOutside);
+useOnClickOutside(ref, onClickOutside);
 ```
 
-- `ref` &mdash; the specific area which click event is invalid.
+- `ref` &mdash; the specified element which click event is invalid.
 - `onClickOutside` &mdash; callback function which would be executed when the outside is clicked.
