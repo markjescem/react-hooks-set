@@ -4,6 +4,7 @@ import useElementSize from './useElementSize';
 import useElementLeft from './useElementLeft';
 import useElementTop from './useElementTop';
 import useDebounce from './useDebounce';
+import useOnScreen from './useOnScreen';
 import useOnClickOutside from './useOnClickOutside';
 
 export {
@@ -13,5 +14,6 @@ export {
   useElementLeft,
   useElementTop,
   useDebounce,
+  useOnScreen,
   useOnClickOutside
 };

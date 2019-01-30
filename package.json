@@ -18,10 +18,16 @@
     "url": "git+https://github.com/mcuking/react-hooks-collection.git"
   },
   "keywords": [
-    "data",
-    "persistence",
     "react",
-    "hooks"
+    "hooks",
+    "persist",
+    "debounce",
+    "clickOutside",
+    "scrollPostion",
+    "onScreen",
+    "elementTop",
+    "elementLeft",
+    "elementSize"
   ],
   "author": "mcuking",
   "license": "MIT",
@@ -30,7 +36,9 @@
   },
   "homepage": "https://github.com/mcuking/react-hooks-collection#readme",
   "dependencies": {
-    "@types/react": "^16.7.20"
+    "@types/lodash.throttle": "^4.1.4",
+    "@types/react": "^16.7.20",
+    "lodash.throttle": "^4.1.1"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",
