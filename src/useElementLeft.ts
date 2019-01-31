@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import throttle from 'lodash.throttle';
 
 interface Ref {
   current: HTMLElement;
@@ -22,17 +23,21 @@ function getOffsetLeft(el: HTMLElement): number {
 function useElementLeft(ref: Ref): number {
   let [offsetLeft, setOffsetLeft] = useState(getOffsetLeft(ref.current));
 
-  function handleSize() {
+  const handleSize = () => {
     if (ref && ref.current) {
       setOffsetLeft(getOffsetLeft(ref.current));
     }
-  }
+  };
+
+  const throttleCb = throttle(() => {
+    handleSize();
+  }, 150);
 
   useEffect(() => {
     handleSize();
-    window.addEventListener('resize', handleSize);
+    window.addEventListener('resize', throttleCb);
     return () => {
-      window.removeEventListener('resize', handleSize);
+      window.removeEventListener('resize', throttleCb);
     };
   }, []);
 
