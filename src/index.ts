@@ -1,19 +1,21 @@
 import usePersist from './usePersist';
 import useScrollPosition from './useScrollPosition';
+import useDebounce from './useDebounce';
+import useOnScreen from './useOnScreen';
+import useScript from './useScript';
+import useOnClickOutside from './useOnClickOutside';
 import useElementSize from './useElementSize';
 import useElementLeft from './useElementLeft';
 import useElementTop from './useElementTop';
-import useDebounce from './useDebounce';
-import useOnScreen from './useOnScreen';
-import useOnClickOutside from './useOnClickOutside';
 
 export {
   usePersist,
   useScrollPosition,
-  useElementSize,
-  useElementLeft,
-  useElementTop,
   useDebounce,
   useOnScreen,
-  useOnClickOutside
+  useScript,
+  useOnClickOutside,
+  useElementSize,
+  useElementLeft,
+  useElementTop
 };

@@ -18,6 +18,10 @@
 
 <br/>
 
+- [`useScript`](./docs/useScript.md) &mdash; loads external script and know when it is loaded.
+
+<br/>
+
 - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces any fast changing value.
 
 <br/>
