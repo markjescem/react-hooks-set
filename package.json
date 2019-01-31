@@ -19,7 +19,9 @@
   },
   "keywords": [
     "react",
+    "hook",
     "hooks",
+    "use",
     "persist",
     "debounce",
     "clickOutside",

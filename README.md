@@ -7,18 +7,33 @@
 <br/>
 
 - [`useScrollPosition`](./docs/useScrollPosition.md) &mdash; memorizes page vertical scrolling location state.
-  <br/>
+
+<br/>
+
 - [`usePersist`](./docs/usePersist.md) &mdash; tracks and recovers page state automatically.
-  <br/>
+
+<br/>
+
 - [`useOnScreen`](./docs/useOnScreen.md) &mdash; detects when an element is visible (total or partial) on the screen as well as specify how much of the element should be visible on screen.
-  <br/>
+
+<br/>
+
 - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces any fast changing value.
-  <br/>
+
+<br/>
+
 - [`useOnClickOutside`](./docs/useOnClickOutside.md) &mdash; detects clicks outside of a specified element.
-  <br/>
+
+<br/>
+
 - [`useElementLeft`](./docs/useElementLeft.md) &mdash; fetches the distance of some element to the left of window.
-  <br/>
+
+<br/>
+
 - [`useElementTop`](./docs/useElementTop.md) &mdash; fetches the distance of some element to the top of window.
-  <br/>
+
+<br/>
+
 - [`useElementSize`](./docs/useElementLeft.md) &mdash; fetches the size of some element.
-  <br/>
+
+<br/>
