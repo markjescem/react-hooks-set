@@ -1,10 +1,10 @@
 # `useScrollPosition`
 
-The hooks could memorize vertical scrolling position of page which is closed. When then page is reopened, the data of postion will be recovered and it will scroll to the original postion.
+The hook could memorize vertical scrolling position of page which is closed. When then page is reopened, the data of postion will be recovered and it will scroll to the original postion.
 
 ## Usage
 
-If the scrollable section is window, just use the hooks.
+If the scrollable section is window, just use the hook.
 
 ```jsx
 import { useScrollPosition } from 'react-hooks-collection'
@@ -23,7 +23,7 @@ const Demo = () => {
 }
 ```
 
-In some cases, the scrollable section is just a container of dom. So you need set the id of the container, and pass the name of id to the hooks.
+In some cases, the scrollable section is just a container of dom. So you need set the id of the container, and pass the name of id to the hook.
 
 ```jsx
 import { useRef } from 'react'

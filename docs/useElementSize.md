@@ -1,6 +1,6 @@
 # `useElementSize`
 
-The hooks could help you get the size of some element.
+The hook could help you get the size of some element.
 
 ## Usage
 

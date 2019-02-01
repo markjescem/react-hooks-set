@@ -1,6 +1,6 @@
 # `usePersist`
 
-The hooks could track the state of page. When then page is reopened, the memorized of state will be recovered automatically.
+The hook could track the state of page. When then page is reopened, the memorized of state will be recovered automatically.
 
 ## Usage
 

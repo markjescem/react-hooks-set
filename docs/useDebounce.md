@@ -1,6 +1,6 @@
 # `useDebounce`
 
-The hooks could help you debounce any fast changing value. The debounced value will only reflect the latest value when the hook has not been called for specified time period.
+The hook could help you debounce any fast changing value. The debounced value will only reflect the latest value when the hook has not been called for specified time period.
 
 ## Usage
 
@@ -14,19 +14,16 @@ const Demo = () => {
   const [isSearching, setIsSearching] = useState(false);
   const debounceName = useDebounce(name, 800);
 
-  useEffect(
-    async () => {
-      if (debounceName) {
-        setIsSearching(true);
-        const data = await fetchBookList(debounceName);
-        setIsSearching(false);
-        setResult(data);
-      } else {
-        setResult([]);
-      }
-    },
-    [debounceName]
-  );
+  useEffect(async () => {
+    if (debounceName) {
+      setIsSearching(true);
+      const data = await fetchBookList(debounceName);
+      setIsSearching(false);
+      setResult(data);
+    } else {
+      setResult([]);
+    }
+  }, [debounceName]);
 
   return (
     <form>

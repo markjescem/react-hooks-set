@@ -1,6 +1,6 @@
 # `useScript`
 
-The hooks could help you load external script and know when it is loaded.
+The hook could help you load external script and know when it is loaded.
 
 ## Usage
 

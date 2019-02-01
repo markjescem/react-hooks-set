@@ -1,6 +1,6 @@
 # `useOnScreen`
 
-The hooks could help you detect when an element is visible on the screen as well as specify how much of the element should be visible on screen. And you could use it for lazy loading images or triggering animations when the page has scrolled down to a particular section.
+The hook could help you detect when an element is visible on the screen as well as specify how much of the element should be visible on screen. And you could use it for lazy loading images or triggering animations when the page has scrolled down to a particular section.
 
 ## Usage
 

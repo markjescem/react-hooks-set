@@ -1,6 +1,6 @@
 # `useOnClickOutside`
 
-The hooks could help you detect clicks outside of a specified element. The passed callback function would be executed when the outside area is clicked.
+The hook could help you detect clicks outside of a specified element. The passed callback function would be executed when the outside area is clicked.
 
 ## Usage
 
