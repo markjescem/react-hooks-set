@@ -21,6 +21,10 @@ function checkVisible(
     bottom
   } = ref.current.getBoundingClientRect();
 
+  if (left + right + top + bottom === 0) {
+    return false;
+  }
+
   const windowWidth = window.innerWidth || document.documentElement.clientWidth;
   const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
