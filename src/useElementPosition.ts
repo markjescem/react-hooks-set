@@ -5,27 +5,41 @@ interface Ref {
   current: HTMLElement;
 }
 
-function getOffsetTop(el: HTMLElement): number {
+interface Position {
+  left: number;
+  top: number;
+}
+
+function getPosition(el: HTMLElement): Position {
   if (!el) {
-    return 0;
+    return {
+      left: 0,
+      top: 0
+    };
   }
 
+  let offsetLeft = el.offsetLeft;
   let offsetTop = el.offsetTop;
-  type NullableHTMLElement = HTMLElement | null;
-  let current: NullableHTMLElement = el.offsetParent as HTMLElement;
+  let current: HTMLElement | null = el.offsetParent as HTMLElement;
+
   while (current) {
+    offsetLeft += current.offsetLeft;
     offsetTop += current.offsetTop;
     current = current.offsetParent as HTMLElement;
   }
-  return offsetTop;
+
+  return {
+    left: offsetLeft,
+    top: offsetTop
+  };
 }
 
-function useElementTop(ref: Ref): number {
-  let [offsetTop, setOffsetTop] = useState(getOffsetTop(ref.current));
+function useElementPosition(ref: Ref): Position {
+  let [position, setPosition] = useState(getPosition(ref.current));
 
   const handleSize = () => {
     if (ref && ref.current) {
-      setOffsetTop(getOffsetTop(ref.current));
+      setPosition(getPosition(ref.current));
     }
   };
 
@@ -41,7 +55,7 @@ function useElementTop(ref: Ref): number {
     };
   }, []);
 
-  return offsetTop;
+  return position;
 }
 
-export default useElementTop;
+export default useElementPosition;

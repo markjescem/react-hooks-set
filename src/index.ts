@@ -5,8 +5,7 @@ import useOnScreen from './useOnScreen';
 import useScript from './useScript';
 import useOnClickOutside from './useOnClickOutside';
 import useElementSize from './useElementSize';
-import useElementLeft from './useElementLeft';
-import useElementTop from './useElementTop';
+import useElementPosition from './useElementPosition';
 
 export {
   usePersist,
@@ -16,6 +15,5 @@ export {
   useScript,
   useOnClickOutside,
   useElementSize,
-  useElementLeft,
-  useElementTop
+  useElementPosition
 };

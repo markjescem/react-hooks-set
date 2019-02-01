@@ -30,11 +30,7 @@
 
 <br/>
 
-- [`useElementLeft`](./docs/useElementLeft.md) &mdash; fetches the distance of some element to the left of window.
-
-<br/>
-
-- [`useElementTop`](./docs/useElementTop.md) &mdash; fetches the distance of some element to the top of window.
+- [`useElementPosition`](./docs/useElementPosition.md) &mdash; fetches distance of some element to the left and top of window.
 
 <br/>
 
