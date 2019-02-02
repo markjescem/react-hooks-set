@@ -6,7 +6,7 @@ The hook could help you detect clicks outside of a specified element. The passed
 
 ```jsx
 import { useState, useRef } from 'react';
-import { useOnClickOutside } from 'react-hooks-collection';
+import { useOnClickOutside } from 'react-hooks-set';
 
 const Demo = () => {
   const [isModalShow, setModalShow] = useState(false);

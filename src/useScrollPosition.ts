@@ -7,7 +7,7 @@ interface Ref {
 
 function useScrollPosition(
   srcollRef: Ref,
-  positionDataKey = 'react-hooks-collection-scroll-positions',
+  positionDataKey = 'react-hooks-set-scroll-positions',
   storePositionEvenWindowClosed = false
 ) {
   const storage = storePositionEvenWindowClosed

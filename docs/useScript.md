@@ -5,7 +5,7 @@ The hook could help you load external script and know when it is loaded.
 ## Usage
 
 ```jsx
-import { useScript } from 'react-hooks-collection';
+import { useScript } from 'react-hooks-set';
 
 const Demo = () => {
   const [loaded, loadError] = useScript(

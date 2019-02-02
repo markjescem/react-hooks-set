@@ -6,7 +6,7 @@ The hook could help you get distance of some element to the left and the top of 
 
 ```jsx
 import { useRef } from 'react'
-import { useElementPosition } from 'react-hooks-collection'
+import { useElementPosition } from 'react-hooks-set'
 
 const Demo = () => {
   const ref = useRef(null)

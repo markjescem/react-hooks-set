@@ -5,7 +5,7 @@ The hook could track the state of page. When then page is reopened, the memorize
 ## Usage
 
 ```jsx
-import { usePersist } from 'react-hooks-collection';
+import { usePersist } from 'react-hooks-set';
 
 const Demo = props => {
   const { history } = props;

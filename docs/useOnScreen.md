@@ -6,7 +6,7 @@ The hook could help you detect when an element is visible on the screen as well 
 
 ```jsx
 import { useState, useRef } from 'react';
-import { useOnScreen } from 'react-hooks-collection';
+import { useOnScreen } from 'react-hooks-set';
 
 const Demo = () => {
   const ref = useRef(null);

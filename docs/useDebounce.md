@@ -6,7 +6,7 @@ The hook could help you debounce any fast changing value. The debounced value wi
 
 ```jsx
 import { useState, useEffect } from 'react';
-import { useDebounce } from 'react-hooks-collection';
+import { useDebounce } from 'react-hooks-set';
 
 const Demo = () => {
   const [name, setName] = useState('');

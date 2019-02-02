@@ -2,7 +2,7 @@
   <img src="./banner.png">
   <br/>
   <br/>
-  <pre>npm i <a href="https://www.npmjs.com/package/react-hooks-collection">react-hooks-collection</a></pre>
+  <pre>npm i <a href="https://www.npmjs.com/package/react-hooks-set">react-hooks-set</a></pre>
 </div>
 <br/>
 

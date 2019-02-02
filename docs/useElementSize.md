@@ -6,7 +6,7 @@ The hook could help you get the size of some element.
 
 ```jsx
 import { useRef } from 'react'
-import { useElementSize } from 'react-hooks-collection'
+import { useElementSize } from 'react-hooks-set'
 
 const Demo = () => {
   const ref = useRef(null)
