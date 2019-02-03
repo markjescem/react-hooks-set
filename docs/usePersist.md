@@ -8,27 +8,20 @@ The hook could track the state of page. When then page is reopened, the memorize
 import { usePersist } from 'react-hooks-set';
 
 const Demo = props => {
-  const { history } = props;
-  const [remark, setRemark, clearRemark] = usePersist('remark', false);
-
-  const handleChange = e => {
-    setRemark(e.target.value);
-  };
-
-  const toBack = () => {
-    history.push('/back');
-    clearRemark();
-  };
-
-  const toForward = () => {
-    history.push('/forward');
-  };
+  const [remark, setRemark, clearRemark] = usePersist('remark', '', false);
 
   return (
     <form>
-      <input value={remark} onChange={handleChange} />
-      <button onClick={toBack}>ToBack</button>
-      <button onClick={toForward}>ToForward</button>
+      <input value={remark} onChange={e => setRemark(e.target.value)} />
+      <button
+        onClick={() => {
+          props.history.push('/back');
+          clearRemark();
+        }}
+      >
+        ToBack
+      </button>
+      <button onClick={() => props.history.push('/forward');}>ToForward</button>
     </form>
   );
 };
@@ -37,9 +30,10 @@ const Demo = props => {
 ## Reference
 
 ```js
-usePersist(key);
+usePersist(key, intialState);
 usePersist(key, persistEvenWindowClosed);
 ```
 
-- `key` &mdash; `localStorage` or `sessionStorage` key to manage.
-- `persistEvenWindowClosed` &mdash; boolean, if set to `false`, hook will use sessionSorage to store state, and state will be cleared when page closed.
+- `key` &mdash; required, `localStorage` or `sessionStorage` key to manage.
+- `intialState` &mdash; required, the initial state that needs persisted.
+- `persistEvenWindowClosed` &mdash; optional, boolean, if set to `false`, hook will use sessionSorage to store state, and state will be cleared when page closed.

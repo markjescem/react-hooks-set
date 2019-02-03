@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
 import createStorage from './utils/createStorage';
 
-function usePersist(key: string, persistEvenWindowClosed = false) {
+function usePersist(
+  key: string,
+  initialState: any,
+  persistEvenWindowClosed = false
+) {
   const storage = persistEvenWindowClosed
     ? createStorage('local')
     : createStorage('session');
 
-  const getStorageValue = () => {
-    return storage.getItem(key) ? storage.getItem(key) : '';
+  const getValue = () => {
+    return storage.getItem(key) ? storage.getItem(key) : initialState;
   };
 
-  const [state, setState] = useState(getStorageValue());
+  const [state, setState] = useState(getValue());
 
   const updateState = (value: any) => {
     storage.setItem(key, value);
