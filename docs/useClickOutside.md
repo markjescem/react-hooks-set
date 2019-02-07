@@ -39,5 +39,5 @@ const Demo = () => {
 useOnClickOutside(ref, onClickOutside);
 ```
 
-- `ref` &mdash; the specified element which click event is invalid.
-- `onClickOutside` &mdash; callback function which would be executed when the outside is clicked.
+- `ref` &mdash; required, the specified element which click event is invalid.
+- `onClickOutside` &mdash; required, callback function which would be executed when the outside is clicked.

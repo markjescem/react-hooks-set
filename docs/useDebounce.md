@@ -55,5 +55,5 @@ async function fetchBookList(name) {
 useDebounce(value, delay);
 ```
 
-- `value` &mdash; the value which needs to be debounced.
-- `delay` &mdash; number, the time period for the hook called again.
+- `value` &mdash; required, the value which needs to be debounced.
+- `delay` &mdash; optional, number, the time period for the hook called again, default value is 800 ms.

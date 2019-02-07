@@ -31,6 +31,6 @@ const Demo = () => {
 useOnScreen(ref, offset, partialVisibility);
 ```
 
-- `ref` &mdash; the specified element that is visible on the viewport or not.
-- `offset` &mdash; number, the offset (both height and width) that the element needs to be visible on the viewport.
-- `partialVisibility` &mdash; boolean, if set to `true`, the hook would return true when the element is partial visible on the viewport. Or the element needs to be total visible on the viewport.
+- `ref` &mdash; required, the specified element that is visible on the viewport or not.
+- `offset` &mdash; optional, number, the offset (both height and width) that the element needs to be visible on the viewport.
+- `partialVisibility` &mdash; optional, boolean, if set to `true`, the hook would return true when the element is partial visible on the viewport. Or the element needs to be total visible on the viewport.

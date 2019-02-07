@@ -52,6 +52,6 @@ useScrollPosition(scollRef, positionDataKey);
 useScrollPosition(scollRef, positionDataKey, storePositionEvenWindowClosed);
 ```
 
-- `scollRef` &mdash; If scrollable content is not window, you could set ref to the srcollable content and pass ref to hook, or the scrollable content is window by default.
-- `positionDataKey` &mdash; `localStorage` or `sessionStorage` key to manage position data.
-- `storePositionEvenWindowClosed` &mdash; boolean, if set to `false`, hook will use sessionSorage to store position data, and data will be cleared when page closed.
+- `scollRef` &mdash; optional, if scrollable content is not window, you could set ref to the srcollable content and pass ref to hook, or the scrollable content is window by default.
+- `positionDataKey` &mdash; optional, `localStorage` or `sessionStorage` key to manage position data.
+- `storePositionEvenWindowClosed` &mdash; optional, boolean, if set to `false`, hook will use sessionSorage to store position data, and data will be cleared when page closed.

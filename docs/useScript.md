@@ -27,4 +27,4 @@ const Demo = () => {
 useScript(scriptSrc);
 ```
 
-- `scriptSrc` &mdash; the src of the script that you want to load dynamically.
+- `scriptSrc` &mdash; required, the src of the script that you want to load dynamically.
