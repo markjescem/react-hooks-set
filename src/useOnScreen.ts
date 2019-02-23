@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import throttle from 'lodash.throttle';
+import { on, off } from './utils/event';
 
 interface Ref {
   current: HTMLElement;
@@ -59,12 +60,12 @@ function useOnScreen(
 
     setVisible(checkVisible(ref, offset, partialVisibility));
 
-    window.addEventListener('scroll', throttleCb);
-    window.addEventListener('resize', throttleCb);
+    on(window, 'scroll', throttleCb);
+    on(window, 'resize', throttleCb);
 
     return () => {
-      window.removeEventListener('scroll', throttleCb);
-      window.removeEventListener('resize', throttleCb);
+      off(window, 'scroll', throttleCb);
+      off(window, 'resize', throttleCb);
     };
   }, []);
 

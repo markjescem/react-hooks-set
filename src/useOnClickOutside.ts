@@ -1,26 +1,24 @@
 import { useEffect } from 'react';
+import { on, off } from './utils/event';
 
 interface Ref {
   current: HTMLElement;
 }
 
 function useOnClickOutside(ref: Ref, onClickOutside: CallableFunction) {
-  useEffect(
-    () => {
-      const handleClick = (event: Event) => {
-        if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
-          onClickOutside(event);
-        }
-      };
-      window.addEventListener('click', handleClick);
-      window.addEventListener('touchstart', handleClick);
-      return () => {
-        window.removeEventListener('click', handleClick);
-        window.removeEventListener('touchstart', handleClick);
-      };
-    },
-    [onClickOutside]
-  );
+  useEffect(() => {
+    const handleClick = (event: any) => {
+      if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
+        onClickOutside(event);
+      }
+    };
+    on(window, 'click', handleClick);
+    on(window, 'touchstart', handleClick);
+    return () => {
+      off(window, 'click', handleClick);
+      off(window, 'touchstart', handleClick);
+    };
+  }, [onClickOutside]);
 }
 
 export default useOnClickOutside;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import throttle from 'lodash.throttle';
+import { on, off } from './utils/event';
 
 interface Ref {
   current: HTMLElement;
@@ -36,9 +37,9 @@ function useElementSize(ref: Ref): ElementSize | {} {
 
   useEffect(() => {
     handleSize();
-    window.addEventListener('resize', throttleCb);
+    on(window, 'resize', throttleCb);
     return () => {
-      window.removeEventListener('resize', throttleCb);
+      off(window, 'resize', throttleCb);
     };
   }, []);
 

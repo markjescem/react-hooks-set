@@ -1,51 +1,49 @@
 import { useState, useEffect } from 'react';
+import { on, off } from './utils/event';
 
 let cachedScripts: string[] = [];
 function useScript(scriptSrc: string) {
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState(false);
 
-  useEffect(
-    () => {
-      if (!cachedScripts.includes(scriptSrc)) {
+  useEffect(() => {
+    if (!cachedScripts.includes(scriptSrc)) {
+      setLoaded(true);
+      setLoadError(false);
+      return;
+    } else {
+      cachedScripts.push(scriptSrc);
+
+      const script = document.createElement('script');
+      script.src = scriptSrc;
+      script.async = true;
+
+      const onLoadResolve = () => {
         setLoaded(true);
         setLoadError(false);
-        return;
-      } else {
-        cachedScripts.push(scriptSrc);
+      };
 
-        const script = document.createElement('script');
-        script.src = scriptSrc;
-        script.async = true;
+      const onLoadReject = () => {
+        const index = cachedScripts.indexOf(scriptSrc);
+        index >= 0 && cachedScripts.splice(index, 1);
 
-        const onLoadResolve = () => {
-          setLoaded(true);
-          setLoadError(false);
-        };
+        script.remove();
 
-        const onLoadReject = () => {
-          const index = cachedScripts.indexOf(scriptSrc);
-          index >= 0 && cachedScripts.splice(index, 1);
+        setLoaded(true);
+        setLoadError(true);
+      };
 
-          script.remove();
+      on(script, 'load', onLoadResolve);
+      on(script, 'error', onLoadResolve);
 
-          setLoaded(true);
-          setLoadError(true);
-        };
+      document.body.appendChild(script);
 
-        script.addEventListener('load', onLoadResolve);
-        script.addEventListener('error', onLoadReject);
-
-        document.body.appendChild(script);
-
-        return () => {
-          script.removeEventListener('load', onLoadResolve);
-          script.removeEventListener('error', onLoadReject);
-        };
-      }
-    },
-    [scriptSrc]
-  );
+      return () => {
+        off(script, 'load', onLoadResolve);
+        off(script, 'error', onLoadResolve);
+      };
+    }
+  }, [scriptSrc]);
 
   return [loaded, loadError];
 }

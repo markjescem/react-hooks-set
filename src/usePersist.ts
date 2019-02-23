@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import createStorage from './utils/createStorage';
+import { on, off } from './utils/event';
 
 function usePersist(
   key: string,
@@ -31,9 +32,9 @@ function usePersist(
   };
 
   useEffect(() => {
-    window.addEventListener('storage', syncState);
+    on(window, 'storage', syncState);
     return () => {
-      window.removeEventListener('storage', syncState);
+      off(window, 'storage', syncState);
     };
   }, []);
 
