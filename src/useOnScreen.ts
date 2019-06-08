@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import throttle from 'lodash.throttle';
 import { on, off } from './utils/event';
 
@@ -51,9 +51,9 @@ function useOnScreen(
   offset: number,
   partialVisibility: boolean = false
 ) {
-  const [isVisible, setVisible] = useState(false);
+  const [isVisible, setVisible] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const throttleCb = throttle(() => {
       setVisible(checkVisible(ref, offset, partialVisibility));
     }, 150);

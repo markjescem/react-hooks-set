@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import throttle from 'lodash.throttle';
 import { on, off } from './utils/event';
 
@@ -36,7 +36,7 @@ function getPosition(el: HTMLElement): Position {
 }
 
 function useElementPosition(ref: Ref): Position {
-  let [position, setPosition] = useState(getPosition(ref.current));
+  let [position, setPosition] = React.useState(getPosition(ref.current));
 
   const handleSize = () => {
     if (ref && ref.current) {
@@ -48,7 +48,7 @@ function useElementPosition(ref: Ref): Position {
     handleSize();
   }, 150);
 
-  useEffect(() => {
+  React.useEffect(() => {
     handleSize();
     on(window, 'resize', throttleCb);
     return () => {

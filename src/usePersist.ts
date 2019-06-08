@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import createStorage from './utils/createStorage';
 import { on, off } from './utils/event';
 
@@ -15,7 +15,7 @@ function usePersist(
     return storage.getItem(key) ? storage.getItem(key) : initialState;
   };
 
-  const [state, setState] = useState(getValue());
+  const [state, setState] = React.useState(getValue());
 
   const updateState = (value: any) => {
     storage.setItem(key, value);
@@ -31,7 +31,7 @@ function usePersist(
     e.key === key && setState(storage.getItem(key));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     on(window, 'storage', syncState);
     return () => {
       off(window, 'storage', syncState);

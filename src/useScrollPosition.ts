@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import * as React from 'react';
 import createStorage from './utils/createStorage';
 
 interface Ref {
@@ -14,7 +14,7 @@ function useScrollPosition(
     ? createStorage('local')
     : createStorage('session');
 
-  useEffect(() => {
+  React.useEffect(() => {
     let scrollPositions = storage.getItem(positionDataKey);
     const href = window.location.href;
     const scollContainer = srcollRef ? srcollRef.current : null;

@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import * as React from 'react';
 import { on, off } from './utils/event';
 
 let cachedScripts: string[] = [];
 function useScript(scriptSrc: string) {
-  const [loaded, setLoaded] = useState(false);
-  const [loadError, setLoadError] = useState(false);
+  const [loaded, setLoaded] = React.useState(false);
+  const [loadError, setLoadError] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!cachedScripts.includes(scriptSrc)) {
       setLoaded(true);
       setLoadError(false);

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import * as React from 'react';
 import { on, off } from './utils/event';
 
 interface Ref {
@@ -6,7 +6,7 @@ interface Ref {
 }
 
 function useOnClickOutside(ref: Ref, onClickOutside: CallableFunction) {
-  useEffect(() => {
+  React.useEffect(() => {
     const handleClick = (event: any) => {
       if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
         onClickOutside(event);
