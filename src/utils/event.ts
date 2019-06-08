@@ -12,7 +12,9 @@ try {
     }
   });
   window.addEventListener('test-passive', noop, opts);
-} catch (error) {}
+} catch (error) {
+  console.log(error);
+}
 
 export function on(
   target: HTMLElement | Window,

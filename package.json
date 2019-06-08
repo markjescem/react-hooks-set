@@ -11,7 +11,19 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf lib && tsc",
-    "deploy": "npm run build && npm publish"
+    "deploy": "npm run build && npm publish",
+    "lint": "tslint  --project tsconfig.json 'src/**/*.ts'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint  --project tsconfig.json 'src/**/*.ts'",
+      "git add ."
+    ]
   },
   "repository": {
     "type": "git",
@@ -40,12 +52,18 @@
   },
   "devDependencies": {
     "@types/lodash.throttle": "^4.1.4",
-    "@types/react": "^16.8.1",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "husky": "^2.4.0",
+    "lint-staged": "^8.2.0",
     "rimraf": "^2.6.3",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.2.4"
   },
   "peerDependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
